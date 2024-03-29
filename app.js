@@ -4,6 +4,8 @@ const app = express()
 const mongoose = require('mongoose')
 const Product = require("./Product")
 
+const port = process.env.PORT || 3000;
+
 
 mongoose.connect("mongodb+srv://daisedalok:sifahdais@cluster0.m9apm8y.mongodb.net/reviews")
 
@@ -20,7 +22,7 @@ const allTasks = await Product.find({ Name : req.query.search})
 })
 
 
-app.listen(5000, () => {
+app.listen(port, () => {
     console.log("Connected!!!")
 })
 
